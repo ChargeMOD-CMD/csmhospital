@@ -9,6 +9,9 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import { Chatbot } from "@/components/site/Chatbot";
 
 function NotFoundComponent() {
   return (
@@ -72,11 +75,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "CSM Hospital — Advanced Care Beyond Tomorrow" },
+      { name: "description", content: "CSM Hospital is a futuristic AI-powered smart hospital combining holographic medical intelligence with compassionate, world-class care." },
+      { name: "author", content: "CSM Hospital" },
+      { property: "og:title", content: "CSM Hospital — Advanced Care Beyond Tomorrow" },
+      { property: "og:description", content: "AI-powered diagnostics, robotic surgery, 24/7 emergency response, and a healing environment designed for trust." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -113,7 +116,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <Nav />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+      <Chatbot />
     </QueryClientProvider>
   );
 }
