@@ -6,8 +6,8 @@ import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // Use relative base so the build works at any GitHub Pages subpath.
-  base: "./",
+  // Use explicit base path for GitHub Pages subpath
+  base: "/csmhospital/",
   plugins: [
     tanstackRouter({ target: "react", autoCodeSplitting: true }),
     react(),
